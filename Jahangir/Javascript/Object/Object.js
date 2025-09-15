@@ -19,3 +19,19 @@ person2.lastName = "Nabi";
 person2.age = 58;
 
 console.log("Fater Name: " + person2.fullName());
+
+
+//Object.fromEntries()
+
+const fruits =[ 
+["apples", 300],
+["bananas", 400],
+["pears", 500]
+];
+
+const obj = Object.fromEntries(fruits);
+console.log(obj.pears);
+
+const obj2 =  Object.fromEntries(fruits);
+obj2.pears = 600;
+console.log("from object 2: Pears - " + obj2.pears);
