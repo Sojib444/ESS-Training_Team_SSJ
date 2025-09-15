@@ -43,14 +43,6 @@ function testCallBack(){
 
 
 
-const person1 = {
-    firstName: "Jahan",
-    lastName: "Sumit",
-    age: 29
-}
-
-console.log("Name: " + person1.firstName + " " + person1.lastName);
-console.log("Age: " + person1.age);
 
 
 let arr =  [1,5,6,2,4,3];
