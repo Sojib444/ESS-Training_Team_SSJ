@@ -130,3 +130,124 @@ console.log(keys);
 for (let x in manush) {
   console.log(manush[x]);
 }
+
+
+//Adding a new Property or changing a property
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+};
+
+Object.defineProperty(person, "lastName", {value : "NO"});
+Object.defineProperty(person, "language", {value : "Bangla"},{enumerable:false});
+console.log(person.lastName);
+
+Object.defineProperty(person, "firstName", {writable:false});
+person.firstName = "Moin";
+console.log(person.firstName);
+
+console.log(Object.keys(person)); 
+
+
+console.log(Object.getOwnPropertyNames(person));
+
+
+
+const object = {};
+Object.defineProperty(object, "hidden", {
+  value: 42,
+  enumerable: false
+});
+
+object.visible = "hello";
+
+console.log(Object.keys(object)); 
+
+console.log(Object.getOwnPropertyNames(object));
+
+
+//Create an object
+const sobur = {firstName:"John", lastName:"Doe"};
+
+// Define a getter
+Object.defineProperty(sobur, "fullName", {
+  get: function () {return this.firstName + " " + this.lastName;}
+});
+
+console.log(sobur.fullName);
+
+
+// Define object
+const obj = {counter:0};
+
+// Define setters
+Object.defineProperty(obj, "reset", {
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(obj, "increment", {
+  get : function () {this.counter++;}
+});
+Object.defineProperty(obj, "decrement", {
+  get : function () {this.counter--;}
+});
+Object.defineProperty(obj, "add", {
+  set : function (value) {this.counter += value;}
+});
+Object.defineProperty(obj, "subtract", {
+  set : function (i) {this.counter -= i;}
+});
+
+// Play with the counter:
+obj.reset;
+obj.add = 5;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+
+
+// Create an object:
+const abir = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  get lang() {
+    return this.language;
+  },
+  set lang(lang) {
+    this.language = lang;
+  }
+};
+
+// Display data from the object using a getter:
+console.log(abir.lang);
+abir.lang = "en"; // Set language using setter
+console.log(abir.lang); // Display data from the object using a getter
+
+
+
+// Define object
+const object2 = {counter : 0};
+
+// Define setters and getters
+Object.defineProperty(object2, "reset", {
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(object2, "increment", {
+  get : function () {this.counter++;}
+});
+Object.defineProperty(object2, "decrement", {
+  get : function () {this.counter--;}
+});
+Object.defineProperty(object2, "add", {
+  set : function (value) {this.counter += value;}
+});
+Object.defineProperty(object2, "subtract", {
+  set : function (value) {this.counter -= value;}
+});
+
+// Play with the counter:
+object2.reset;
+object2.add = 5;
+object2.subtract = 1;
+object2.increment;
+object2.decrement;
