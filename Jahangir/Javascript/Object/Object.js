@@ -35,3 +35,20 @@ console.log(obj.pears);
 const obj2 =  Object.fromEntries(fruits);
 obj2.pears = 600;
 console.log("from object 2: Pears - " + obj2.pears);
+
+
+// Object.assign()
+
+const p1 = {
+    name : "Messi",
+    age : 45,
+    eyeColor : "blue"
+};
+
+const p2 = {
+    name : "Ronaldo",
+};
+
+Object.assign(p1,p2);
+
+console.log(p1);
