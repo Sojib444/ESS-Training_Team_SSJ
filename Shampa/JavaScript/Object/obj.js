@@ -78,3 +78,32 @@ const person5 = {
   }
 };
 console.log(person5.fullName());
+
+
+const person6 = {
+  firstName: "John",
+  lastName: "Doe"
+};
+let text = person6;
+console.log(text);
+console.log(typeof text); 
+
+let w = "";
+for (let key in person6) {
+  w += person6[key] + " ";
+}
+console.log(w); // Output: John Doe 
+
+const person8 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Create an Array from the Properties
+const myArray = Object.values(person8);
+console.log(myArray); // [ 'John', 30, 'New York' ]
+
+// Stringify the Array
+let msg = myArray.toString();
+console.log(msg); // John,30,New York
